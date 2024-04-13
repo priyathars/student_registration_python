@@ -1,0 +1,15 @@
+h1{
+    text-align : center;
+}
+
+body{
+    background-image:url("/static/images/background_image.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+}
+.container{
+    background-color: white;
+    mx:auto;
+    color: blue;
+}

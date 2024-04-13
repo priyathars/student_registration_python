@@ -1,0 +1,43 @@
+{% extends 'navbar.html' %}
+
+{% block content %}
+    <br/>
+    <h1>Student Registration </h1>
+    <form class="form-horizontal mx-auto" style="width: 800px;" method="POST" action="{{url_for('add_student')}}">
+        <div class="form-group row">
+            {{ form.hidden_tag() }}
+
+            {{ form.student_name.label(class="col-sm-2 col-form-label my-2")}}
+            <div class="col-sm-10">
+                {{ form.student_name(class="form-control") }}
+            </div>
+            {{ form.dob.label(class="col-sm-2 col-form-label my-2")}}
+            <div class="col-sm-10">
+                {{ form.dob(class="form-control")}}
+            </div>
+            {{ form.email.label(class="col-sm-2 col-form-label my-2")}}
+            <div class="col-sm-10">
+                {{ form.email(class="form-control")}}
+            </div>
+            {{ form.mobile_no.label(class="col-sm-2 col-form-label my-2") }}
+            <div class="col-sm-10">
+                {{ form.mobile_no(class="form-control" , type="tel", required=True,pattern='[6-9][0-9]{9}')}}
+            </div>
+            {{ form.gender.label(class="col-sm-2 col-form-label my-2") }}
+
+            <div class="col-sm-10">
+                {{ form.gender(class="form-control") }}
+            </div>
+
+            {{ form.course.label(class="col-sm-2 col-form-label my-2") }}
+            <div class="col-sm-10">
+                {{ form.course(class="form-control") }}
+            </div>
+        </div>
+        <br/>
+        <div class="mx-auto" style="width: 200px">
+        {{ form.submit(class="btn btn-primary btn-lg")}}
+        </div>
+    </form>
+
+{% endblock %}
